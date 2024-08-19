@@ -1,0 +1,34 @@
+//// responsive for text view and added sized box
+
+
+/// Add it inside widget build context
+
+final textScale=MediaQuery.of(context).size.height * 0.01;
+    final screenHeight=MediaQuery.of(context).size.height;
+    final screenWidth=MediaQuery.of(context).size.height;
+    double getHeight(double sysVar,double size){
+      double calc=size/1000;
+      return sysVar *calc;
+    }
+    double getWidth(double sysVar,double size){
+      double calc=size/1000;
+      return sysVar *calc;
+    }
+
+    double getTextSize(double sysVar,double size){
+      double calc=size/10;
+      return sysVar *calc;
+    }
+/// How to use in text view 
+Text( 'Noel',
+     style: TextStyle(
+      color: Colors.white,
+      fontSize: getTextSize(textScale,16),
+      fontFamily: 'PoppinsRegular',
+      fontWeight: FontWeight.w500,
+      height: 0,),),
+
+/// How to use in sizedbox widget
+ SizedBox(height: getHeight(screenHeight, 30),),
+
+
